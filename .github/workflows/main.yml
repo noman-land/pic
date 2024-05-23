@@ -16,5 +16,8 @@ jobs:
         uses: cloudflare/wrangler-action@v3.5.0
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          preCommands: npm install && cp wrangler-example.toml wrangler.toml && sed -i '' -e 's/example\.com/${{ secrets.DOMAIN }}/g' -e 's/xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx/${{ secrets.DATABASE_ID }}/g' wrangler.toml
+          preCommands: |
+            npm install
+            cp wrangler-example.toml wrangler.toml
+            sed -i wrangler.toml -e 's/example\.com/${{ secrets.DOMAIN }}/g' -e 's/xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx/${{ secrets.DATABASE_ID }}/g'
           command: deploy
