@@ -1,0 +1,19 @@
+{
+  "name": "pic",
+  "version": "0.2.0",
+  "description": "Generate Stable Diffusion images via Slack.",
+  "main": "src/index.ts",
+  "scripts": {
+    "tail": "npx wrangler tail",
+    "start": "npx wrangler dev --remote",
+    "deploy": "npx wrangler deploy"
+  },
+  "author": "Noman",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240512.0",
+    "typescript": "^5.4.5",
+    "vitest": "^0.34.6",
+    "wrangler": "^3.57.1"
+  }
+}

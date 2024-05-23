@@ -1,0 +1,12 @@
+node_modules
+.DS_Store
+*.swp
+*.swo
+.wrangler
+.vscode
+
+# These get pulled from Cloudflare secrets
+.dev.vars
+
+# This gets generated in the Githuh action with Github secrets
+wrangler.toml

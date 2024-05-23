@@ -1,0 +1,28 @@
+name = "pic"
+main = "src/index.ts"
+workers_dev = false
+compatibility_date = "2024-05-20"
+routes = [
+  { pattern = "https://api.example.com/pic/v1/generate/*", zone_name = "example.com" }
+]
+
+ai = { binding = "AI" }
+
+r2_buckets = [
+  { binding = "PIC_R2", bucket_name = "pic" }
+]
+
+d1_databases = [
+  { binding = "PIC", database_name = "PIC", database_id = "xxxxxxxx-xxxx-4xxx-xxxx-xxxxxxxxxxxx" }
+]
+
+[placement]
+mode = "smart"
+
+[vars]
+MODEL = "absolute-reality-v1-8-1"
+HEIGHT = "768"
+WIDTH = "768"
+STEPS = "25"
+SEED = "0"
+OUTPUT_FORMAT = "png"
